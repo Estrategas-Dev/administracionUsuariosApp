@@ -1,0 +1,25 @@
+<app-navegation></app-navegation>
+<div class="container">
+  <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Buscar por nombre de usuario">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Usuario</th>
+            <th scope="col">Plaza</th>
+            <th scope="col">Email</th>
+            <th scope="col">Acciones</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users | filter:searchText">
+        <td> {{user.name}}</td> 
+        <td>{{user.plaza}}</td>
+        <td>{{user.email}}</td>
+        <td><button class="btn btn-primary" (click)=goDetail(user.id) >Detalles</button></td>
+          </tr>
+    
+       
+        </tbody>
+      </table>
+</div>

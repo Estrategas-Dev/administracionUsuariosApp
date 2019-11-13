@@ -1,0 +1,280 @@
+<app-navegation></app-navegation>
+<ngx-spinner></ngx-spinner>
+<div class="container">
+  <div class="container" style="float:left; width: 100%;">
+
+
+ 
+  
+  
+    <section id="contact-form-section" class="form-content-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="tab-content">
+                    <div class="col-sm-12">
+                        <div class="item-wrap">
+                            <div class="row">
+                                
+                                <div class="col-sm-12">
+                                    <div class="item-content colBottomMargin">
+                                        <div class="item-info">
+                                            <h2 class="item-title text-center">Detalles del usuario</h2>
+                                            
+                                        </div><!--End item-info -->
+                                        
+                                   </div><!--End item-content -->
+                                </div><!--End col -->
+                                <div class="col-md-12">
+                                
+                                
+                                <form   data-toggle="validator" class="popup-form">
+                                                <div class="row">
+                                                    
+                                                    
+                                                    <div class="form-group col-sm-6">
+                                                        <label>Nombre: </label>
+                                                        <input name="fname" id="fname"   class="form-control" type="text" value ={{data.name}} readonly> 
+                                                      
+                                                    </div><!-- end form-group -->
+                                                    <div class="form-group col-sm-6">
+                                                        <label for="email">Usuario: </label>
+                                                        <input pattern=".*@\w{2,}\.\w{2,}" class="form-control"  value = {{data.email}} readonly>
+                                                       
+                                                    </div><!-- end form-group -->
+                                                    <div class="form-group col-sm-6">
+                                                        <label for="">Plaza Asignada:</label>
+                                                        <input  class="form-control" type="text"value={{data.plaza}} readonly required data-error="Por favor ingresa tu número de teléfono">
+                                                       
+                                                    </div><!-- end form-group -->
+                                                    <div class="form-group col-sm-6" style = "border: groove;">
+                                                        <label for="">Rol Asignado:</label>
+                                                        <br>
+                                                        <h2 style="color:green">{{data.rol}}</h2>
+                                                        <button class="btn btn-block btn-primary" (click)="open(content2)">Cambiar rol</button>
+                                                        <br>
+                                                    </div><!-- end form-group -->
+                                                    <div class="form-group col-sm-6">
+                                                        <label for="">Id del Checador Implementta:</label>
+                                                        <input class="form-control" type="text" value={{data.idUserChecador}} readonly>
+                                                       
+                                                    </div><!-- end form-group -->
+                                                    <div class="form-group col-sm-6" style="border:groove">
+                                                     
+                                                      <label for="">Funcion oculta</label>
+                                                      <br>
+                                                      <h2 *ngIf="data.isHide" style="color:green"> Activado</h2>
+                                                      <h2 *ngIf ="!data.isHide" style="color:red">Desactivado</h2>
+                                                    
+                                                      <button class="btn btn-block btn-primary" (click)="open(content3)">Activar/Desactivar</button>
+                                                     <br>
+                                                  </div><!-- end form-group -->
+                                                    <div class="form-group col-sm-6">
+                                                        <label for="">Contraseña:</label>
+                                                        <input  placeholder="Contraseña*"  value={{data.password}}  class="form-control" type="text"readonly >
+                                                        
+                                                     
+                                                    </div><!-- end form-group -->
+                                                    <div class="form-group col-sm-6" style="border:groove">
+                                                      <label for="">Id del dispositivo:</label>
+                                                      <h4 style="color:green">{{data.IMEI}}</h4>
+                                                      <button class="btn btn-block btn-primary" (click)="open(content4)">Borrar id</button>
+                                              <br>
+                                                     
+                                                  </div><!-- end form-group -->
+                                                    <div class="form-group col-sm-6">
+                                                      <label for="">Último inicio de sesión:</label>
+                                                      <input class="form-control" type="text" value={{data.lastSession}} readonly>
+                                                     
+                                                  </div><!-- end form-group -->
+                                                  <div class="form-group col-sm-6" style="border:groove">
+                                                    <label for="">Estado del usuario:</label>
+                                                    <br>
+                                                    <h2 *ngIf="data.isActive" style="color:green"> Activado</h2>
+                                                    <h2 *ngIf ="!data.isActive" style="color:red">Desactivado</h2>
+                                                  
+                                                    <button class="btn btn-block btn-primary" (click)="open(content)">Cambiar estado</button>
+                                                   <br>
+                                                </div><!-- end form-group -->
+                                     
+                                                <div class="form-group col-sm-6">
+                                                  <label for="">Id de usuario en implementta:</label>
+                                                  <input class="form-control" type="text" value={{data.idaspuser}} readonly >
+
+
+                                                 
+                                              </div><!-- end form-group -->
+                                  
+                                       
+                                           
+                                                 
+                                            
+                                                 
+                                                </div><!-- end row -->
+                                            </form><!-- end form -->
+                                                  
+                                        <div class="form-group last col-sm-12">
+                                            <button  class="btn btn-primary btn-block" [routerLink]="['/']" routerLinkActive="router-link-active"  >Aceptar</button>
+                                        </div><!-- end form-group -->	
+                                            
+                                    
+                                    
+                                  
+                                
+                                </div>
+                            </div><!--End row -->
+                            
+                        
+                                
+                            
+                            <!-- Popup end -->
+                            
+                        </div><!-- end item-wrap -->
+                    </div><!--End col -->
+                </div><!--End tab-content -->
+            </div><!--End row -->
+        </div><!--End container -->
+    </section>
+    
+  
+  </div>
+<!--   <div class="container" style="float: left; width: 30%;padding-top: 95px;">
+  <img src="assets/img/logo.jpg" alt="">
+  <img src="http://estrategas.mx/wp-content/uploads/2016/03/Logo-Estrategas-de-Mexico-01-300x153.png" alt=""></div> -->
+</div>
+
+
+
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Cambiar estado</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label >Estado</label>
+        <div class="input-group">
+        
+          <div class="input-group-append">
+            <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="isActive">
+        
+              <label ngbButtonLabel class="btn-outline-success">
+                <input ngbButton type="radio" [value]="true"> Activado
+              </label>
+              
+              <label ngbButtonLabel class="btn-outline-danger">
+                <input ngbButton type="radio" [value]="false"> Desactivado
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="changeStatus(data.uid)">Guardar</button>
+  </div>
+</ng-template>
+
+
+<ng-template #content2 let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Cambiar rol</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label >Estado</label>
+        <div class="input-group">
+        
+          <div class="input-group-append">
+            <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="rol">
+        
+              <label ngbButtonLabel class="btn-outline-primary">
+                <input ngbButton type="radio" [value]="2"> Abogado
+              </label>
+              
+              <label ngbButtonLabel class="btn-outline-primary">
+                <input ngbButton type="radio" [value]="5"> Gestor
+              </label>
+              <label ngbButtonLabel class="btn-outline-primary">
+                <input ngbButton type="radio" [value]="7"> Reductor
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="changeRole(data.uid,data.idaspuser,data.idplaza)">Guardar</button>
+  </div>
+</ng-template>
+
+
+
+<ng-template #content3 let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Activar función ultra secreta</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label >Estado</label>
+        <div class="input-group">
+        
+          <div class="input-group-append">
+            <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="funcionOculta">
+        
+          
+              
+              <label ngbButtonLabel class="btn-outline-success">
+                <input ngbButton type="radio" [value]="true"> Activado
+              </label>
+              
+              <label ngbButtonLabel class="btn-outline-danger">
+                <input ngbButton type="radio" [value]="false"> Desactivado
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeFunction(data.uid)">Guardar</button>
+  </div>
+</ng-template>
+
+<ng-template #content4 let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Borrar id del dispositivo</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label >Importante!!</label>
+        <div class="input-group">
+        
+<p>Cuando se borra el id de un dispositivo el usuario puede iniciar sesión nuevamente en cualquier otro dispositivo, incluyendo el que usa actualmente</p>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="deleteIdDevice(data.uid)">Borrar</button>
+  </div>
+</ng-template>
+
