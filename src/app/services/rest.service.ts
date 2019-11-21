@@ -9,6 +9,8 @@ export class RestService {
     "https://implementta.net/andro/ImplementtaMovil.aspx?query=sp_userVerifyImplementtaMovil";
     apiUrl3 =
     "https://implementta.net/andro/ImplementtaMovil.aspx?query=sp_cambiarRolMovil";
+    apiUrl4 =
+    "https://implementta.net/andro/ImplementtaMovil.aspx?query=sp_importarUsuarios";
   constructor(private http: HttpClient) { }
 
 
@@ -31,6 +33,21 @@ changeRol(idPlaza,idAspUser,idRol){
   return new Promise(resolve => {
     this.http
       .post(this.apiUrl3+' '+`${idPlaza},'${idAspUser}',${idRol}`,null)
+      .subscribe(
+        data => {
+          console.log(data)
+          resolve(data);
+        },
+        err => {
+          console.log(err);
+        }
+      );
+  });
+}
+importar(sqlString){
+  return new Promise(resolve => {
+    this.http
+      .post(this.apiUrl4+' '+sqlString,null)
       .subscribe(
         data => {
           console.log(data)

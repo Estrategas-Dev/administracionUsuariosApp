@@ -30,7 +30,19 @@
                                 <form   data-toggle="validator" class="popup-form">
                                                 <div class="row">
                                                     
-                                                    
+                                                                
+                                                   <div class="form-group col-sm-6" style="border:groove">
+                                                    <label for="">Versión de App</label>
+                                                    <br>
+                                                    <h2 style="color:green"> {{data.appVersion}}</h2>
+                                                    <br>
+                                                   </div><!-- end form-group -->
+                                                   <div class="form-group col-sm-6" style="border:groove">
+                                                    <label for="">Última vez que sincronizó cuentas</label>
+                                                    <br>
+                                                    <h2 style="color:green"> {{data.lastSync}}</h2>
+                                                    <br>
+                                                   </div><!-- end form-group -->
                                                     <div class="form-group col-sm-6">
                                                         <label>Nombre: </label>
                                                         <input name="fname" id="fname"   class="form-control" type="text" value ={{data.name}} readonly> 
@@ -96,16 +108,12 @@
                                                    <br>
                                                 </div><!-- end form-group -->
                                      
-                                                <div class="form-group col-sm-6">
+                                                  <div class="form-group col-sm-6">
                                                   <label for="">Id de usuario en implementta:</label>
-                                                  <input class="form-control" type="text" value={{data.idaspuser}} readonly >
-
-
-                                                 
-                                              </div><!-- end form-group -->
+                                                  <input class="form-control" type="text" value={{data.idaspuser}} readonly >  
+                                                  </div><!-- end form-group -->
                                   
-                                       
-                                           
+                           
                                                  
                                             
                                                  
