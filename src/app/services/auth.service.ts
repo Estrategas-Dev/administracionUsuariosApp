@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
+//import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/firestore';
 
@@ -52,7 +53,7 @@ register(email : string, password : string, name : string, idplaza :string, idro
           lastSession:"",
           managedAccounts:0,
           totalAccounts:0,
-          isActive: false,
+          isActive: true,
           isHide:false,
           lastSync:'',
           urlImage: ""

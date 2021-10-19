@@ -1,13 +1,10 @@
-<div class="container"style="padding-top:30px;">
- 
-    <ul class="nav justify-content-end">
-        <a class="navbar-brand" href="#">Aplicación Movil Implementta</a>
-        <li class="nav-item">
-          <a class="nav-link" href="/add-user">Agregar usuario</a>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-outline-danger" (click)="exit()">Cerrar sesión</button>
-        </li>
-     
-      </ul>
-</div>
+<ul class="nav justify-content-center navbar-light bg-light p-3">
+    <a class="btn btn-block btn-navegacion navbar-brand" (click)="irInicio()">Implementta móvil app</a>
+    <li class="nav-item">
+        <a class="nav-link" routerLink="/add-user">Agregar usuario</a>
+    </li>
+    <li class="nav-item">
+        <button class="btn btn-outline-danger" (click)="exit()">Cerrar sesión</button>
+    </li>
+
+</ul>

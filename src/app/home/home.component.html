@@ -1,35 +1,31 @@
 <app-navegation></app-navegation>
-<div class="container">
-  <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Buscar por nombre de usuario">
+
+<div class="container mt-3">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Buscar por nombre de usuario">
     <table class="table table-striped">
         <thead>
-          <tr>
-            <th scope="col">Usuario</th>
-            <th scope = "col">id</th>
-            <th scope="col">Plaza</th>
-            <th scope="col">Email</th>
-            <th scope="col">Version App</th>
-            <th scope="col">Botón oculto</th>
-            <th scope="col">Acciones</th>
-          
-           
-           
-          </tr>
+            <tr>
+                <th scope="col">Usuario</th>
+                <th scope="col">Plaza</th>
+                <th scope="col">Email</th>
+                <th scope="col">Rol</th>
+
+
+            </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let user of users | filter:searchText">
-        <td> {{user.name}}</td> 
-        <td>{{user.idasp}}</td>
-        <td>{{user.plaza}}</td>
-        <td>{{user.email}}</td>
-        <td>{{user.appVersion}}</td>
-        <td><input type="checkbox" class="form-check-input" (click)="hideButton(user.isHide,user.id)"[checked]="user.isHide"></td>
-        <td><button class="btn btn-primary" (click)=goDetail(user.id) >Detalles</button></td>
+            <tr *ngFor="let user of users | filter:searchText">
+                <td> {{user.name}}</td>
+                <td>{{user.plaza}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.rol}}</td>
+                <!-- <td><input type="checkbox" class="form-check-input" (click)="hideButton(user.isHide,user.id)" [checked]="user.isHide"></td> -->
+                <td><button class="btn btn-primary" (click)=goDetail(user.uid)>Detalles</button></td>
 
-          </tr>
-    
-       
+            </tr>
+
+
         </tbody>
-      </table>
-     <!--  <button class="btn btn-success btn-block" (click)="importar()"> Exportar Usuarios Feos</button> -->
+    </table>
+    <!-- <button class="btn btn-success btn-block" (click)="importar()"> Exportar Usuarios Feos</button> -->
 </div>

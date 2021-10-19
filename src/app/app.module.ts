@@ -9,20 +9,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import {firebaseConfig} from "../environments/environment";
-import {AngularFireModule} from "@angular/fire/";
-import {AngularFireAuthModule} from "@angular/fire/auth";
+import { firebaseConfig } from "../environments/environment";
+import { AngularFireModule } from "@angular/fire/";
+import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestore } from "@angular/fire/firestore";
-import {AngularFireStorageModule, AngularFireStorage } from 'angularfire2/storage';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule, AngularFireStorage } from 'angularfire2/storage';
 import { NavegationComponent } from './navegation/navegation.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
+import { S3Service } from "../app/services/s3.service";
 
 @NgModule({
   declarations: [
@@ -43,12 +45,14 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(firebaseConfig),
-   AngularFireStorageModule,
-    AngularFireAuthModule
+    AngularFireStorageModule,
+    AngularFireAuthModule,
+    AngularFirestoreModule
   ],
   providers: [
-    AngularFireStorage,AngularFirestore
-    ],
+    S3Service,
+    AngularFireStorage//, AngularFirestore
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

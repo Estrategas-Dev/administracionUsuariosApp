@@ -1,38 +1,42 @@
-
-<app-navegation></app-navegation>
+<app-navegation>
+</app-navegation>
 <ngx-spinner></ngx-spinner>
-    <section id="contact-form-section" class="form-content-wrap">
-		<div class="container">
-			<div class="row">
-				<div class="tab-content">
-					<div class="col-sm-12">
-						<div class="item-wrap">
-							<div class="row">
-								
-								<div class="col-sm-12">
-									<div class="item-content colBottomMargin">
-										<div class="item-info">
-											<h2 class="item-title text-center">Registro de usuario para la app</h2>
-											
-										</div><!--End item-info -->
-										
-								   </div><!--End item-content -->
-								</div><!--End col -->
-								<div class="col-md-12">
-								
-								
-								<form data-toggle="validator" class="popup-form">
-												<div class="row">
-													<div id="msgContactSubmit" class="hidden"></div>
-													
-													<div class="form-group col-sm-6">
-														<div class="help-block with-errors"></div>
-														<input [(ngModel)]="user" placeholder="Usuario *" class="form-control"  type="text" [ngModelOptions]="{standalone: true}"> 
-														<div class="input-group-icon"><i class="fa fa-user"></i></div>
-													</div><!-- end form-group -->
-													<div class="form-group col-sm-6">
-														
-														<select  class="form-control" [(ngModel)]="idplaza" [ngModelOptions] ="{standalone: true}" placeholder="Selecciona una plaza" >
+<section id="contact-form-section" class="form-content-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="tab-content">
+                <div class="col-sm-12">
+                    <div class="item-wrap">
+                        <div class="row">
+
+                            <div class="col-sm-12">
+                                <div class="item-content colBottomMargin">
+                                    <div class="item-info">
+                                        <h2 class="item-title text-center">Registro de usuario para la app</h2>
+
+                                    </div>
+                                    <!--End item-info -->
+
+                                </div>
+                                <!--End item-content -->
+                            </div>
+                            <!--End col -->
+                            <div class="col-md-12">
+
+
+                                <form data-toggle="validator" class="popup-form">
+                                    <div class="row">
+                                        <div id="msgContactSubmit" class="hidden"></div>
+
+                                        <div class="form-group col-sm-6">
+                                            <div class="help-block with-errors"></div>
+                                            <input [(ngModel)]="user" placeholder="Usuario *" class="form-control" type="text" [ngModelOptions]="{standalone: true}">
+                                            <div class="input-group-icon"><i class="fa fa-user"></i></div>
+                                        </div>
+                                        <!-- end form-group -->
+                                        <!-- <div class="form-group col-sm-6">
+
+                                            <select class="form-control" [(ngModel)]="idplaza" [ngModelOptions]="{standalone: true}" placeholder="Selecciona una plaza">
                                                             <option value="3">Tijuana</option>
                                                             <option value="4">Tuxpan</option>
                                                             <option value="7">La Paz BCS</option>
@@ -45,173 +49,218 @@
                                                             <option value="14">Nuevo Laredo</option>
                                                             <option value="15">Lerdo Agua</option>
                                                             <option value="16">Lerdo Predial</option>
+                                                            <option value="18">Tijuana Predial</option>
+                                                            <option value="21">Obregon</option>
+                                                            <option value="22">Piedras Negras Predio</option>
+                                                            <option value="23">Ensenada</option>
+                                                            <option value="24">Tijuana agua</option>
+                                                            <option value="25">Mexicali</option>
+                                                            <option value="26">Piedras Negras Agua</option>
+                                                            <option value="27">Tecate</option>
+                                                            <option value="28">Durango</option>
+                                                            <option value="29">Torreon</option>
+                                                            <option value="30">Durango Agua</option>
+                                            </select>
+                                            <div class="input-group-icon"><i class="fa fa-envelope"></i></div>
 
-                                                        </select>
-                                                        <div class="input-group-icon"><i class="fa fa-envelope"></i></div>
-                                                        
-													</div><!-- end form-group -->
-													
-													<div class="clearfix"></div>
-												</div><!-- end row -->
-											</form><!-- end form -->
-											
-                                            <div class="form-group last col-sm-12">
-                                                <button  id="submit" class="btn btn-custom" (click) = "verificaUsuario()">Verificar usuario</button>
-                                            </div><!-- end form-group -->	
-									
-									
-								  
-								
-								</div>
-							</div><!--End row -->
-							
-						
-								
-							
-							<!-- Popup end -->
-							
-						</div><!-- end item-wrap -->
-					</div><!--End col -->
-				</div><!--End tab-content -->
-			</div><!--End row -->
-		</div><!--End container -->
-	</section>
-	
-    <div class="container" *ngIf="data.length==0">
-        <h1 style="color:red;">No se encontró ninguna coincidencia, verifica usuario y/o plaza</h1>
-    </div>
-    <div class="conteiner" *ngIf="data.length > 0">
+                                        </div> -->
+                                        <!-- end form-group -->
 
-
-        <div class="colBottomMargin">
-            &nbsp;<div class="colBottomMargin">&nbsp;</div>
-        </div>	
-        
-        <div id="footer" class="footer">
-            <div class="container">			
-                
-                <div class="row">					
-                    <div class="footer-top col-sm-12">
-                    </div><!-- end col --> 
-                </div><!-- end row -->
-                
-            </div><!--End container -->
-        </div>
-            
-    
-    
-        <section id="contact-form-section" class="form-content-wrap">
-            <div class="container">
-                <div class="row">
-                    <div class="tab-content">
-                        <div class="col-sm-12">
-                            <div class="item-wrap">
-                                <div class="row">
-                                    
-                                    <div class="col-sm-12">
-                                        <div class="item-content colBottomMargin">
-                                            <div class="item-info">
-                                                <h2 class="item-title text-center">Usuario encontrado</h2>
-                                                
-                                            </div><!--End item-info -->
-                                            
-                                       </div><!--End item-content -->
-                                    </div><!--End col -->
-                                    <div class="col-md-12">
-                                    
-                                    
-                                    <form   data-toggle="validator" class="popup-form">
-                                                    <div class="row">
-                                                        <div id="msgContactSubmit" class="hidden"></div>
-                                                        
-                                                        <div class="form-group col-sm-6">
-                                                            <div class="help-block with-errors"></div>
-                                                            <label>Nombre: </label>
-                                                            <input name="fname" id="fname"  [(ngModel)]="nombre" [ngModelOptions] ="{standalone: true}" class="form-control" type="text" value ={{data[0].nombre}} readonly> 
-                                                          
-                                                        </div><!-- end form-group -->
-                                                        <div class="form-group col-sm-6">
-                                                            <div class="help-block with-errors"></div>
-                                                            <label for="email">Usuario: </label>
-                                                            <input [(ngModel)]="usuario" [ngModelOptions] ="{standalone: true}" pattern=".*@\w{2,}\.\w{2,}" class="form-control"  value = {{data[0].usuario}} readonly>
-                                                           
-                                                        </div><!-- end form-group -->
-                                                        <div class="form-group col-sm-6">
-                                                            <div class="help-block with-errors"></div>
-                                                            <label for="">Plaza Asignada</label>
-                                                            <input  [(ngModel)]="plaza" [ngModelOptions] ="{standalone: true}" class="form-control" type="text"value={{data[0].plaza}} readonly required data-error="Por favor ingresa tu número de teléfono">
-                                                           
-                                                        </div><!-- end form-group -->
-                                                        <div class="form-group col-sm-6">
-                                                            <div class="help-block with-errors"></div>
-                                                            <label for="">Rol Asignado</label>
-                                                            <input  [(ngModel)]="rol" [ngModelOptions] ="{standalone: true}" class="form-control" type="text" value={{data[0].rol}} readonly required data-error="Por favor ingresa el asunto">
-                                                          
-                                                        </div><!-- end form-group -->
-                                                        <div class="form-group col-sm-6">
-                                                            <div class="help-block with-errors"></div>
-                                                            <label for="">Id del Checador Implementta</label>
-                                                            <input  [(ngModel)]="idChecador" [ngModelOptions] ="{standalone: true}"class="form-control" type="text" value={{data[0].idUser}} readonly required data-error="Por favor ingresa el asunto">
-                                                           
-                                                        </div><!-- end form-group -->
-                                                        <div class="form-group col-sm-6">
-                                                            <div class="help-block with-errors"></div>
-                                                            <label for="">Contraseña</label>
-                                                            <input [(ngModel)]="password1" [ngModelOptions] ="{standalone: true}" placeholder="Contraseña*" class="form-control" type="password" >
-                                                            <label for="">Repetir contraseña</label>
-                                                            <input  [(ngModel)]="password2" [ngModelOptions] ="{standalone: true}" placeholder="Confirmar contraseña*" class="form-control" type="password" >
-                                                        </div><!-- end form-group -->
-                                               
-                                                     
-                                                
-                                                     
-                                                        <div class="clearfix"></div>
-                                                    </div><!-- end row -->
-                                                </form><!-- end form -->
-                                                			
-                                            <div class="form-group last col-sm-12">
-                                                <button  class="btn btn-primary btn-block"  (click) = "crearUsuario()">Crear usuario</button>
-                                            </div><!-- end form-group -->	
-                                                
-                                        
-                                        
-                                      
-                                    
+                                        <div class="clearfix"></div>
                                     </div>
-                                </div><!--End row -->
-                                
-                            
-                                    
-                                
-                                <!-- Popup end -->
-                                
-                            </div><!-- end item-wrap -->
-                        </div><!--End col -->
-                    </div><!--End tab-content -->
-                </div><!--End row -->
-            </div><!--End container -->
-        </section>
-        
-        
-    
-        
-        <div class="colBottomMargin">
-            &nbsp;<div class="colBottomMargin">&nbsp;</div>
-        </div>	
-        
-        <div id="footer" class="footer">
-            <div class="container">			
-                
-                <div class="row">					
-                    <div class="footer-top col-sm-12">
-                    </div><!-- end col --> 
-                </div><!-- end row -->
-                
-            </div><!--End container -->
+                                    <!-- end row -->
+                                </form>
+                                <!-- end form -->
+
+                                <div class="form-group last col-sm-12">
+                                    <button id="submit" class="btn btn-custom" (click)="verificaUsuario()">Verificar usuario</button>
+                                </div>
+                                <!-- end form-group -->
+
+
+
+
+                            </div>
+                        </div>
+                        <!--End row -->
+
+
+
+
+                        <!-- Popup end -->
+
+                    </div>
+                    <!-- end item-wrap -->
+                </div>
+                <!--End col -->
+            </div>
+            <!--End tab-content -->
         </div>
-        
+        <!--End row -->
+    </div>
+    <!--End container -->
+</section>
+
+<div class="container" *ngIf="data.length==0">
+    <h1 style="color:red;">No se encontró ninguna coincidencia, verifica usuario y/o plaza</h1>
+</div>
+<div class="conteiner" *ngIf="data.length > 0">
 
 
+    <div class="colBottomMargin">
+        &nbsp;
+        <div class="colBottomMargin">&nbsp;</div>
     </div>
 
-	
+    <div id="footer" class="footer">
+        <div class="container">
+
+            <div class="row">
+                <div class="footer-top col-sm-12">
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+
+        </div>
+        <!--End container -->
+    </div>
+
+
+
+    <section id="contact-form-section" class="form-content-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="tab-content">
+                    <div class="col-sm-12">
+                        <div class="item-wrap">
+                            <div class="row">
+
+                                <div class="col-sm-12">
+                                    <div class="item-content colBottomMargin">
+                                        <div class="item-info">
+                                            <h2 class="item-title text-center">Usuario encontrado</h2>
+
+                                        </div>
+                                        <!--End item-info -->
+
+                                    </div>
+                                    <!--End item-content -->
+                                </div>
+                                <!--End col -->
+                                <div class="col-md-12">
+
+
+                                    <form data-toggle="validator" class="popup-form">
+                                        <div class="row">
+                                            <div id="msgContactSubmit" class="hidden"></div>
+
+                                            <div class="form-group col-sm-6">
+                                                <div class="help-block with-errors"></div>
+                                                <label>Nombre: </label>
+                                                <input name="fname" id="fname" [(ngModel)]="nombre" [ngModelOptions]="{standalone: true}" class="form-control" type="text" value={{data[0].nombre}} readonly>
+
+                                            </div>
+                                            <!-- end form-group -->
+                                            <!-- <div class="form-group col-sm-6">
+                                                <div class="help-block with-errors"></div>
+                                                <label for="email">Usuario: </label>
+                                                <input [(ngModel)]="usuario" [ngModelOptions]="{standalone: true}" pattern=".*@\w{2,}\.\w{2,}" class="form-control" value={ {data[0].usuario}} readonly>
+
+                                            </div>-->
+
+                                            <!-- end form-group -->
+                                            <div class="form-group col-sm-6">
+                                                <div class="help-block with-errors"></div>
+                                                <label for="">Plaza Asignada</label>
+                                                <input [(ngModel)]="plaza" [ngModelOptions]="{standalone: true}" class="form-control" type="text" value={{data[0].plaza}} readonly required data-error="Por favor ingresa tu número de teléfono">
+
+                                            </div>
+                                            <!-- end form-group -->
+                                            <div class="form-group col-sm-6">
+                                                <div class="help-block with-errors"></div>
+                                                <label for="">Rol Asignado</label>
+                                                <input [(ngModel)]="rol" [ngModelOptions]="{standalone: true}" class="form-control" type="text" value={{data[0].rol}} readonly required data-error="Por favor ingresa el asunto">
+
+                                            </div>
+                                            <!-- end form-group -->
+                                            <div class="form-group col-sm-6">
+                                                <div class="help-block with-errors"></div>
+                                                <label for="">Id del Checador Implementta</label>
+                                                <input [(ngModel)]="idChecador" [ngModelOptions]="{standalone: true}" class="form-control" type="text" value={{data[0].idUser}} readonly required data-error="Por favor ingresa el asunto">
+
+                                            </div>
+                                            <!-- end form-group -->
+                                            <div class="form-group col-sm-6">
+                                                <div class="help-block with-errors"></div>
+                                                <label for="">Contraseña</label>
+                                                <input [(ngModel)]="password1" [ngModelOptions]="{standalone: true}" placeholder="Contraseña*" class="form-control" type="text">
+                                                <label for="">Repetir contraseña</label>
+                                                <input [(ngModel)]="password2" [ngModelOptions]="{standalone: true}" placeholder="Confirmar contraseña*" class="form-control" type="text">
+                                            </div>
+                                            <!-- end form-group -->
+
+
+
+
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <!-- end row -->
+                                    </form>
+                                    <!-- end form -->
+
+                                    <div class="form-group last col-sm-12">
+                                        <button class="btn btn-primary btn-block" (click)="crearUsuario()">Crear usuario</button>
+                                    </div>
+                                    <!-- end form-group -->
+
+
+
+
+
+                                </div>
+                            </div>
+                            <!--End row -->
+
+
+
+
+                            <!-- Popup end -->
+
+                        </div>
+                        <!-- end item-wrap -->
+                    </div>
+                    <!--End col -->
+                </div>
+                <!--End tab-content -->
+            </div>
+            <!--End row -->
+        </div>
+        <!--End container -->
+    </section>
+
+
+
+
+    <div class="colBottomMargin">
+        &nbsp;
+        <div class="colBottomMargin">&nbsp;</div>
+    </div>
+
+    <div id="footer" class="footer">
+        <div class="container">
+
+            <div class="row">
+                <div class="footer-top col-sm-12">
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+
+        </div>
+        <!--End container -->
+    </div>
+
+
+
+</div>

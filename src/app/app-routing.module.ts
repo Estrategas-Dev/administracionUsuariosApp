@@ -7,17 +7,18 @@ import { NologinGuard } from './guards/nologin.guard';
 import { AddUserComponent } from './add-user/add-user.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 
+
 const routes: Routes = [
 
-  { path: '', redirectTo: 'home',pathMatch: 'full' },
-  { path: 'home',component:HomeComponent,canActivate : [AuthGuard] },
-  { path: 'login', component:LoginComponent,canActivate : [NologinGuard] },
+  { path: '', redirectTo: 'login',pathMatch: 'full' },
+  { path: 'home/:id',component:HomeComponent },
+  { path: 'login', component:LoginComponent },
   { path: 'add-user', component:AddUserComponent  },
   { path: 'user-detail/:id', component:UserDetailComponent  }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
