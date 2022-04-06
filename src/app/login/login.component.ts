@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
       res['user'].email === 'admin.tepic.a@erdm.mx' || // Tepic agua
       res['user'].email === 'admin.mazatlan.a@erdm.mx' || // Mazatlan
       res['user'].email === 'demo@erdm.mx' // Demo
+      res['user'].email === 'testing.zapopanp.p@erdm.mx' // Zapopan Predio
       ) {
        // console.log(res['user'].email);
         Swal.fire({
